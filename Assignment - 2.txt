@@ -1,0 +1,18 @@
+use assignment;
+
+select * from employee where deptno=10 and salary> 3000;
+select * from students where marks between 50 and 80;
+select * from students where marks between 80 and 100;
+select distinct city from station where id%2=0;
+select count(city)-count(distinct city) as difference from station;
+select distinct city from station where city like "a%" or city like "e%"or city like "i%" or city like "o%" or city like "u%";
+select distinct city from station where city like "a%a" or city like "e%e" or city like "i%i" or city like "o%o" or city like "u%u";
+select distinct city from station where city Not like "a%" and city Not like "e%" and city Not like "i%" and city Not like "o%" and city Not like "u%";
+select distinct city from station where city Not like "a%" and city Not like "%a" and city Not like "e%" and city Not like "%e" and city Not like "i%" and city Not like "%i" and city Not like "o%" and city Not like "%o" and city Not like "u%" and city Not like "%u";
+select sum(salary),deptno from emp group by deptno order by deptno;
+select first_name,last_name,salary,period_diff(month(curdate()),month(hire_date)) as diff from emp where salary>2000 and period_diff(month(curdate()), month(hire_date)) between 1 and 10 order by emp_no;
+select count(name) as city from city where population>100000;
+select sum(population) as "Total Population" from city where district="california";
+select countrycode,avg(population) as "avg(population)" from city group by countrycode order by countrycode;
+
+
